@@ -1,0 +1,394 @@
+.flexslider {
+  .border-radius(0px);
+  margin:0px;
+  margin-left:-15px;
+  margin-right:-15px;
+  background-color: rgba(255,255,255,0);
+  border:none;
+  box-shadow: none;
+
+  ul {
+    list-style-type: none;
+    margin:0px;
+    padding:0px;
+
+    li {
+      margin:0px;
+      padding:0px;
+    }
+  }
+}
+
+//***************************************************************
+// CONTROLS
+//***************************************************************
+
+.flex-control-paging li a {
+  background:rgba(255,255,255,.4);
+  width:12px;
+  height: 12px;
+  box-shadow: none;
+  border-radius: 6px;
+  .transition();
+
+  &:not(.flex-active):hover {
+    transform:scale(1.5,1.5);
+  }
+
+  &.flex-active, &:hover {
+    background: white;
+  }
+}
+
+.lightly .flex-control-paging li a {
+  background:rgba(0,0,0,.4);
+
+    &.flex-active, &:hover {
+      background:black;
+    }
+  }
+
+.slider-controls-container {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: @screen-lg;
+  height: 0px;
+  z-index: 50;
+  margin-left: auto;
+  margin-right: auto;
+  top: -90px;
+
+  @media(min-width: @screen-lg-min) {
+    top: -110px;
+  }
+
+  #sliderControls {
+    position: absolute;
+    display: block;
+
+    @media(min-width: @screen-sm-min){
+      right:0px;
+    }
+
+    .flex-control-nav {
+      position: relative;
+      display: inline-block;
+      overflow: visible;
+
+      @media(min-width: @screen-sm-min) and (max-width: @screen-xs-max) {
+
+
+      }
+
+      @media(min-width: @screen-lg-min) {
+
+      }
+    }
+
+    .flex-direction-nav {
+      display: none;
+    }
+
+  }
+}
+
+
+//***************************************************************
+// LAYOUT
+//***************************************************************
+
+.slide {
+  margin:0;
+  position: relative;
+
+  .slide-col {
+    position: absolute;
+    display:block;
+    width: 100%;
+    padding:0px;
+    margin:0px;
+    height:100%;
+    min-height: 500px;
+    overflow: hidden;
+    top:0px;
+    bottom:0px;
+
+
+    @media(min-width: @screen-lg-min) {
+      position: relative;
+      vertical-align: middle;
+      display: table;
+      float: left;
+      width:50%;
+    }
+
+    &.hero {
+      z-index: 10;
+      left:0px;
+    }
+
+    &.copy {
+      z-index: 20;
+      right:0px;
+
+      .copy-container {
+        display: block
+        position: static;
+        height:auto;
+        width:90%;
+        margin:0px auto;
+
+
+
+        nav {
+          margin-top:45px;
+        }
+
+        h2 {
+          margin: 0px 0px 40px 0px;
+
+          span {
+            display: block;
+            margin:10px 0px;
+          }
+
+        }
+
+
+        .text {
+          display: none;
+
+          p {
+
+          }
+
+          @media(min-width: @screen-lg-min) {
+            display: block;
+            position:relative;
+          }
+        }
+      }
+
+    }
+
+  }
+}
+
+// Deal with vertical positioning of content within each column
+.slide .slide-col {
+
+  .slide-content{
+    display: block;
+    position: absolute;
+    bottom: 90px;
+
+
+    @media(min-width: @screen-lg-min) {
+      position: relative;
+      bottom: auto;
+    }
+  }
+
+  .center{
+    @media(min-width: @screen-lg-min) {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  .pinned {
+      position: absolute;
+  }
+
+  .pinned.bottom {
+      bottom: 0px;
+  }
+
+  .pinned.top {
+    top:0px;
+  }
+}
+
+// wrapper allows for applying a max-width to slide content.
+.slide-wrapper {
+  position: relative;
+  display:block;
+  width:100%;
+  padding:0px;
+  margin:auto;
+  overflow: hidden;
+  height:100%;
+  max-width: @screen-lg;
+}
+
+// image layout
+.slide.hero {
+
+    img {
+      max-width: 100%;
+      width:100%;
+      height: auto;
+    }
+
+}
+
+//***************************************************************
+// STYLING
+//***************************************************************
+
+.slide {
+  .slide-col {
+
+    @media(min-width: @screen-lg-min) {
+
+    }
+
+    &.hero {
+
+    }
+
+    &.copy {
+
+      #gradient.vertical( rgba(0,0,0,0); rgba(0,0,0,.5); 0%; 50%);
+      // remove the gradent on larger devices.
+      @media(min-width: @screen-lg-min) {
+        background-image: none !important;
+        filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)")) !important; // IE9 and down
+      }
+
+      .copy-container {
+
+          nav {
+
+          }
+
+          h2 {
+            font-family: @font-header-primary;
+            font-weight: bolder;
+            font-size:(60/16) * 100%;
+            line-height: 90%;
+
+            @media(min-width: @screen-lg-min) {
+              font-size:(150/16) * 100%;
+            }
+
+            span {
+              font-style: italic;
+              font-weight: normal;
+              font-family:@font-header-secondary;
+              font-size:.5em;
+              line-height: 100%;
+
+              @media(min-width: @screen-lg-min) {
+                font-size:1/5em;
+              }
+            }
+
+          }
+
+
+          .text {
+
+            p {
+              line-height: 1.75em;
+            }
+
+            @media(min-width: @screen-lg-min) {
+
+            }
+          }
+        }
+
+      .btn {
+        color:white;
+        .border-radius(25px);
+        padding:0px;
+        width: 50px;
+        height: 50px;
+
+
+
+        @media(min-width: @screen-sm-min) {
+
+          background: @link-color;
+          border:1px white solid;
+          padding:10px 25px;
+          line-height: 1em;
+          background:transparent;
+          text-indent: 0px;
+          width: auto;
+          margin:0px 20px 0px 0px;
+        }
+
+        @trans: transform .25s, background .25s, border .25s;
+
+        -webkit-transition: @trans;
+        -moz-transition:    @trans;
+        -ms-transition:     @trans;
+        -o-transition:      @trans;
+        transition:         @trans;
+
+
+        &:hover {
+          background-color: @link-color;
+          border:1px @link-color solid;
+          //transform: scale(1.1,1.1);
+        }
+
+      }
+
+      .btn  span {
+        color:white;
+        font-size: 3em;
+        line-height: 50px;
+        display:block;
+        width: 50px;
+        height: 50px;
+
+        @media(min-width: @screen-sm-min) {
+          display: none;
+        }
+      }
+
+    }
+
+  }
+}
+
+
+
+
+.slide.lightly {
+  color:@lightly-copy;
+
+  h1,h2,h3,h4 {
+    color:@lightly-header;
+  }
+}
+
+
+
+
+.lightly {
+  .slide {
+
+    .slide-col.copy {
+      z-index: 20;
+      right: 0px;
+      #gradient.vertical(rgba(255, 255, 255, 0); rgba(255, 255, 255, .5); 25%; 100%);
+
+      .btn {
+        border: 1px @gray-light solid !important;
+        color: black !important;
+        &:hover {
+          color: white !important;
+          background-color: @link-color;
+          border: 1px @link-color solid;
+        }
+
+      }
+    }
+  }
+}
+

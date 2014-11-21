@@ -1,0 +1,26 @@
+/******************************************************************
+Site Name: Sportl
+Author: Luke Grannis
+
+Stylesheet: Main Stylesheet
+
+Here's where the magic happens. Here, you'll see we are calling in
+the separate media queries. The base mobile goes outside any query
+and is called at the beginning, after that we call the rest
+of the styles inside media queries.
+******************************************************************/
+
+// import global variables
+@import "vars/vars";
+
+// import bootstrap
+@import "../bundles/bootstrap/less/bootstrap";
+@import "../bundles/flexslider/flexslider";
+
+// import mixins
+@import "mixins/module";
+
+//include all module imports in modules.less
+@import "modules/modules";
+
+

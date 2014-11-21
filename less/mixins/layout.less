@@ -1,0 +1,23 @@
+.standard-block(@position:relative){
+  position: @position;
+  display:block;
+  overflow:hidden;
+  margin:0;
+  padding:0;
+}
+
+.centered-block(@width){
+  .standard-block();
+  margin:0 auto;
+  width:@width;
+}
+
+.absolute-center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.overflow-visible {
+  overflow:visible;
+}

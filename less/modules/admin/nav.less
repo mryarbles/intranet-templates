@@ -1,0 +1,73 @@
+.admin {
+  .nav-sidebar {
+    position: fixed;
+    background-color: @blue-light;
+    min-height: 800px;
+
+    nav {
+      display: block;
+      margin:13px 0px 13px 13px;
+
+
+      ul {
+        list-style: none;
+        margin:0;
+        padding:0;
+
+        li {
+          display: block;
+          overflow: hidden;
+        }
+
+      }
+    }
+
+    .btn {
+      margin-bottom: 5px;
+      text-align: left;
+      padding:10px 20px;
+      background-color: @blue-light;
+      font-size: 100%;
+
+      &.active {
+        background-color: @blue;
+        color: white;
+      }
+    }
+
+    .page-location {
+
+      .list-group-item {
+        border:none;
+      }
+
+      .nav {
+        border: none;
+
+        .group-header {
+          background-color: @blue;
+          color:white;
+        }
+
+        a.ui-link {
+          color:@gray-dark;
+
+          &.active {
+            color:@gray-dark;
+            font-weight: bold;
+            background-color: @gray-lightest;
+            &:after {
+              content:" \003e"
+            }
+          }
+        }
+
+
+
+
+      }
+
+    }
+
+  }
+}

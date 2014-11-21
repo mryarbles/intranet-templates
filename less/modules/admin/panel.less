@@ -1,0 +1,54 @@
+.panel-admin {
+  border: none;
+  position: relative;
+  overflow: hidden;
+
+  .panel-heading {
+    .clearfix();
+    background-color: @blue-light;
+    color:@blue-dark;
+    font-size:1.25em;
+  }
+
+  .panel-body {
+    position: relative;
+    color:@blue-dark;
+    font-size: 1.25em;
+    .clearfix();
+    padding:40px;
+
+    .overlay {
+      position: absolute;
+      z-index: 10;
+      display: block;
+      width:100%;
+      height: 100%;
+      background-color: white;
+      .opacity(.75);
+      .transition(opacity);
+      margin:-15px;
+    ;
+    }
+
+    .row {
+      padding:15px 0px;
+    }
+
+  }
+
+  &.active {
+    .panel-heading {
+      background-color: @blue;
+      color:white;
+    }
+
+    .overlay {
+      display: none;
+    }
+
+    .panel-body {
+
+    }
+  }
+
+}

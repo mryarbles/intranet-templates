@@ -1,0 +1,125 @@
+header.main, .header-shadow {
+  position: fixed;
+  display: block;
+  overflow: hidden;
+  width:100%;
+  z-index: 10000;
+  height: @header-height-xs;
+
+  top:0px;
+  left:0px;
+
+  background-color: black;
+
+
+  @media(min-width: @screen-lg-min) {
+    height: @header-height-lg;
+  }
+}
+
+header.main {
+  border-bottom: solid 1px rgba(0,0,0,.25);
+}
+
+.header-shadow {
+  z-index: 1;
+  box-shadow: 0px 0px 50px 100px rgba(0,0,0,.1);
+}
+
+header.main {
+  .logo {
+    display: block;
+    width:126px;
+    height:20px;
+    margin: (@header-height-xs - 20px)/2 0px;
+
+    @media(min-width: @screen-lg-min) {
+      margin: (@header-height-lg - 20px)/2 0px;
+    }
+
+    .logo-lg {
+      display: none;
+    }
+
+    @media(min-width: @screen-lg-min) {
+      width:268px;
+      height:20px;
+      .logo-sm {
+        display: none;
+      }
+      .logo-lg {
+        display: block;
+      }
+
+    }
+
+    .logo-lg svg, .logo-sm svg {
+      path {
+        fill: white;
+      }
+    }
+  }
+}
+
+body.lightly {
+  header.main {
+
+    background-color: white;
+
+    .logo {
+      .logo-lg svg, .logo-sm svg {
+        path {
+          fill: black;
+        }
+      }
+    }
+
+    .hamburger {
+      .icon-bar {
+        background-color: black;
+      }
+    }
+
+  }
+}
+
+.hamburger {
+  position: relative;
+  display: block;
+  width:27px;
+  height:20px;
+  border: none;
+  background:transparent;
+  overflow: hidden;
+  padding: 0px;
+  margin: (@header-height-xs - 20px)/2 0px;
+
+  @media(min-width: @screen-lg-min) {
+    margin: (@header-height-lg - 20px)/2 0px;
+  }
+
+  .icon-bar {
+    display: block;
+    background-color: white;
+    width: 100%;
+    height:3px;
+    margin-bottom: 3px;
+    .border-radius(0px);
+  }
+}
+
+
+
+/* This is the default
+body.darkly {
+  header.main {
+    .logo {
+      .logo-lg svg {
+        path {
+          fill: #ffffff;
+        }
+      }
+    }
+  }
+}
+*/
