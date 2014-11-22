@@ -14,7 +14,7 @@ requirejs.config( {
         "bootstrap":"../../bundles/bootstrap/dist/js/bootstrap.min",
         "flexslider":"../../bundles/flexslider/jquery.flexslider",
         "mmenu":"../../bundles/jQuery.mmenu/src/js/jquery.mmenu.min.all",
-        //"createjs":"http://code.createjs.com/createjs-2013.12.12.min",
+        "preloadjs":"preloadjs-0.4.1.min",
         "plugins":"../plugins",
         "mryarbles":"../mryarbles",
         "tweenmax":"http://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min"
@@ -81,7 +81,7 @@ require([
             $(".nav-drawer").trigger("open.mm");
         });
 
-        new HomeView();
+        new HomeView({container:".content-container"});
 
         $(window).resize(function(){
             var self$ = $(this);

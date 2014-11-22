@@ -36,14 +36,14 @@ define(
         };
 
         module.prototype.applyGradients = function(){
-            console.log("Slider.applyGradients");
+            //console.log("Slider.applyGradients");
 
             var slides$ = this.self$.find(".slide");
-            console.dir(slides$);
+            //console.dir(slides$);
 
             $.each(slides$, function(i){
                 var slide$ = slides$.eq(i);
-                console.log(slide$);
+
                 var color = slide$.attr("data-color");
 
                 if(color !== undefined){

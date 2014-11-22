@@ -180,8 +180,9 @@
 
   .slide-content{
     display: block;
+    width:100%;
     position: absolute;
-    bottom: 90px;
+    bottom: 30px;
 
 
     @media(min-width: @screen-lg-min) {
@@ -300,64 +301,94 @@
           }
         }
 
-      .btn {
-        color:white;
-        .border-radius(25px);
-        padding:0px;
-        width: 50px;
-        height: 50px;
-
-
-
-        @media(min-width: @screen-sm-min) {
-
-          background: @link-color;
-          border:1px white solid;
-          padding:10px 25px;
-          line-height: 1em;
-          background:transparent;
-          text-indent: 0px;
-          width: auto;
-          margin:0px 20px 0px 0px;
-        }
-
-        @trans: transform .25s, background .25s, border .25s;
-
-        -webkit-transition: @trans;
-        -moz-transition:    @trans;
-        -ms-transition:     @trans;
-        -o-transition:      @trans;
-        transition:         @trans;
-
-
-        &:hover {
-          background-color: @link-color;
-          border:1px @link-color solid;
-          //transform: scale(1.1,1.1);
-        }
-
-      }
-
-      .btn  span {
-        color:white;
-        font-size: 3em;
-        line-height: 50px;
-        display:block;
-        width: 50px;
-        height: 50px;
-
-        @media(min-width: @screen-sm-min) {
-          display: none;
-        }
-      }
-
     }
 
   }
 }
 
+// slide buttons
+.slide .slide-col.copy .btn {
+  position: relative;
+  color:white;
+  padding:0px;
+  width: 50px;
+  height: 50px;
+  .border-radius(25px);
 
 
+  &:hover {
+    background-color: inherit;
+    border:none;
+  }
+
+  &:active {
+    background-color: @link-color;
+  }
+
+
+  @media(min-width: @screen-sm-min) {
+    position: relative;
+    bottom:auto;
+    right:auto;
+    font-size:100% !important;
+    background: @link-color;
+    border:1px white solid;
+    padding:0px 25px;
+    line-height: 50px;
+    background:transparent;
+    width: auto;
+    margin:0px 20px 0px 0px;
+    @trans: transform .1s, background .25s, border .25s;
+    -webkit-transition: @trans;
+    -moz-transition:    @trans;
+    -ms-transition:     @trans;
+    -o-transition:      @trans;
+    transition:         @trans;
+
+    &:hover  {
+      background-color: @link-color;
+      border:1px @link-color solid !important;
+    }
+
+  }
+
+
+
+  &.btn-more {
+    position: absolute;
+    right:30px;
+    bottom:0px;
+    font-size:0%;
+    border:none;
+
+    &:after {
+      color:white;
+      position: absolute;
+      top:0px;
+      left:0px;
+      font-size: 16px;
+      .border-radius(50%);
+      background: @link-color;
+      width:100%;
+      height:100%;
+      font-family: 'Glyphicons Halflings';
+      line-height: 50px;
+      content:"\2b";
+    }
+
+    @media(min-width: @screen-sm-min) {
+      position: relative;
+      right:auto;
+      bottom:auto;
+      border:1px white solid;
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+
+}
 
 .slide.lightly {
   color:@lightly-copy;
@@ -366,9 +397,6 @@
     color:@lightly-header;
   }
 }
-
-
-
 
 .lightly {
   .slide {
@@ -381,6 +409,7 @@
       .btn {
         border: 1px @gray-light solid !important;
         color: black !important;
+
         &:hover {
           color: white !important;
           background-color: @link-color;
@@ -388,7 +417,29 @@
         }
 
       }
+
+      .btn.btn-more {
+        @media(max-width: @screen-xs-max){
+          border: none;
+        }
+      }
     }
   }
 }
 
+
+.slide.custom {
+  .slide-col.copy {
+    .btn.btn-more {
+      &:after {
+        background: black ;
+      }
+
+      &:active:after {
+        background:@link-color;
+      }
+    }
+
+  }
+
+}

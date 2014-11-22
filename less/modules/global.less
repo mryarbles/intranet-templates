@@ -12,3 +12,20 @@ h1,h2,h3,h4 {
 .no-overflow {
   overflow: hidden;
 }
+
+
+.btn {
+  &:active {
+    transform: scale(1.2,1.2);
+  }
+}
+
+btn.no-scale {
+  &:active {
+    transform: scale(0,0);
+  }
+}
+
+body.lightly {
+  background-color: white;
+}
