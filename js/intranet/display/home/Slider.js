@@ -12,7 +12,7 @@ define(
 
 
         var module = function($container,$header){
-
+            console.log("Slider");
             var body$ = $("body");
 
             this.self$ = $($container);
@@ -74,7 +74,7 @@ define(
         }
 
         module.prototype.sizeToScreen = function(){
-            console.log("Slider.sizeToScreen");
+            //console.log("Slider.sizeToScreen");
             var h = $(window).height() - (this.header$.height() + 1),
                 minH = 500;
 
@@ -82,20 +82,20 @@ define(
                 h = minH;
             }
 
-            console.log("height:" + h);
+            //console.log("height:" + h);
 
             this.self$.height(h);
             this.self$.find(".slides li").height(h);
         }
 
         module.prototype.onSliderBefore = function(slider){
-            console.log("Slider.onSliderBefore");
-            console.dir(slider);
+            //console.log("Slider.onSliderBefore");
+            //console.dir(slider);
             this.updateColors(slider);
         };
 
         module.prototype.onSliderStart = function(slider){
-            console.log("Slider.onSliderStart");
+            //console.log("Slider.onSliderStart");
             this.sizeToScreen();
             this.updateColors(slider);
         };
@@ -103,7 +103,7 @@ define(
         module.prototype.getCurrentSlide = function(slider){
             var index = slider.animatingTo;
 
-            console.log("Slider.getCurrentSlide: " + index);
+            //console.log("Slider.getCurrentSlide: " + index);
 
             //var slide = $(".flexslider .slide:nth-child(" + (index + 1) + ")");
             var slide = slider.slides.eq(slider.animatingTo);
@@ -117,7 +117,7 @@ define(
                 color = slide.attr("data-color"),
                 scheme = slide.attr("data-style"),
                 body$ = $("body");
-            console.log("Slider.updateColors");
+            //console.log("Slider.updateColors");
 
             //console.dir(slide);
 
@@ -148,7 +148,7 @@ define(
         };
 
         module.prototype.onResize = function(e){
-            console.log("Slider.onResize");
+            //console.log("Slider.onResize");
             this.sizeToScreen();
         };
 

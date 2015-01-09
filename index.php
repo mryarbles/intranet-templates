@@ -6,9 +6,10 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>{{ title }}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <base href="/">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -18,18 +19,32 @@
 
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
-    <body class="lightly" >
-        <!--[if lt IE 7]>
+    <body class="lightly {{ bodyClass }}" >
+        <!--[if lt IE 9]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div class="page-container">
             <nav class="nav-drawer">
+                <button class="btn btn-nav-close">Close Button</button>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Directory</a></li>
-                    <li><a href="#">Useful Numbers</a></li>
-                    <li><a href="#">Useful Sites</a></li>
+                    <li class="profile">
+                        <button class="btn profile">
+                           <img class="avatar" src="img/avatar.png" alt="User Avatar"><span class="user-name">Rebecca Heim</span>
+                        </button>
+                    </li>
+                    <li class="active"><a href="/" class="btn"><span class="glyphicon glyphicon-star"></span>Featured</a></li>
+                    <li><a href="/directory" class="btn"><span class="glyphicon glyphicon-star"></span>People</a></li>
+                    <li><button class="btn"><span class="glyphicon glyphicon-folder-open"></span>Articles</button></li>
+                    <li><button class="btn"><span class="glyphicon glyphicon-link"></span>Useful Links</button></li>
+                    <li><button class="btn"><span class="glyphicon glyphicon-earphone"></span>Useful Numbers</button></li>
                 </ul>
+                <div class="social">
+                    <ul>
+                        <li>twitter</li>
+                        <li>facebook</li>
+                        <li>instagram</li>
+                    </ul>
+                </div>
             </nav>
             <header class="main">
                 <div class="container-fluid">
@@ -37,7 +52,7 @@
                         <div class="col-xs-6">
                             <div class="logo pull-left">
                                 <div class="logo-lg">
-                                    <a href="#">
+                                    <a href="/intranet-templates/">
                                         <!-- large logo svg -->
                                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="9.1 7.8 288.5 19.6" enable-background="new 9.1 7.8 288.5 19.6" xml:space="preserve">
@@ -141,7 +156,7 @@
                                     </a>
                                 </div>
                                 <div class="logo-sm">
-                                    <a href="#">
+                                    <a href="/intranet-templates/">
                                         <!-- small logo svg -->
                                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="8.1 5.4 146.7 19.6" enable-background="new 8.1 5.4 146.7 19.6" xml:space="preserve">
@@ -208,116 +223,24 @@
             </header>
 
             <div class="container-fluid">
-                <div class="content-container row clearfix closed">
-                    <div class="col-xs-12">
-                        <div class="flexslider">
-                            <ul class="slides">
-                                <!-- slide 1 -->
-                                <li class="slide lightly" data-style="lightly">
-                                        <div class="slide-wrapper">
-                                            <div class="slide-col hero">
-                                                <div class="slide-content center">
-                                                    <div class="content image-container">
-                                                        <img data-src="img/slides/slide-1.jpg" class="hero" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="slide-col copy">
-                                                <div class="slide-content center">
-                                                    <div class="content copy-container">
-                                                        <h2><span>Gold Pencil at the</span>One Show</h2>
-                                                        <div class="text">
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempus ultrices purus, eget semper purus suscipit nec. Maecenas non augue lectus. Praesent dapibus, ipsum at sodales tempor, diam mi euismod dui, non tristique sapien tortor id eros.</p>
-                                                        </div>
-                                                        <nav>
-                                                            <a class="btn btn-more">Read More</a>
-                                                            <a class="btn btn-all hidden-xs">View All Articles</a>
-                                                        </nav>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                </li>
-
-                                <!-- slide 2 -->
-                                <li class="slide darkly" data-style="darkly">
-                                    <div class="slide-wrapper">
-                                        <div class="slide-col hero">
-                                            <div class="slide-content center">
-                                                <div class="content image-container">
-                                                    <img data-src="img/slides/boots.jpg" class="hero" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="slide-col copy">
-                                            <div class="slide-content center">
-                                                <div class="content copy-container">
-                                                    <h2><span>The New</span>Dallas Office</h2>
-                                                    <div class="text">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempus ultrices purus, eget semper purus suscipit nec. Maecenas non augue lectus. Praesent dapibus, ipsum at sodales tempor, diam mi euismod dui, non tristique sapien tortor id eros.
-                                                        </p>
-                                                    </div>
-                                                    <nav>
-                                                        <a class="btn btn-more">Read More</a>
-                                                        <a class="btn btn-all hidden-xs">View All Articles</a>
-                                                    </nav>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <!-- slide 3 -->
-                                <li class="slide custom" data-color="#5db2c4" data-style="custom">
-                                    <div class="slide-wrapper">
-                                        <div class="slide-col hero">
-                                            <div class="slide-content center">
-                                                <div class="content image-container">
-                                                    <img data-src="img/slides/duck.png" class="hero" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="slide-col copy">
-                                            <div class="slide-content center">
-                                                <div class="content copy-container">
-                                                    <h2><span>What exactly are</span>Those Ducks?</h2>
-                                                    <div class="text">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempus ultrices purus, eget semper purus suscipit nec. Maecenas non augue lectus. Praesent dapibus, ipsum at sodales tempor, diam mi euismod dui, non tristique sapien tortor id eros. Vivamus hendrerit leo tristique, hendrerit metus vel, condimentum dolor. Etiam accumsan sit amet ligula a blandit. Sed eleifend orci porttitor, porttitor erat ac, viverra leo. </p>
-                                                    </div>
-                                                    <nav>
-                                                        <a class="btn btn-more">Read More</a>
-                                                        <a class="btn btn-all hidden-xs">View All Articles</a>
-                                                    </nav>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-
-                            </ul>
-                        </div><!-- end .slider -->
-                        <div class="slider-controls-container">
-                            <div id="sliderControls"></div>
-                        </div>
-                    </div>
+                <div class="content-container view-animate-container row clearfix">
+                    <div ng-view class="view-animate" autoscroll="true"></div>
                 </div>
             </div><!-- end .container-fluid -->
         </div>
         <div class="header-shadow"></div>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-
         <script src="js/vendor/require.min.js" data-main="js/app.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
+            /*
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
             e=o.createElement(i);r=o.getElementsByTagName(i)[0];
             e.src='//www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X');ga('send','pageview');
+            */
         </script>
     </body>
 </html>

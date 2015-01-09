@@ -11,7 +11,6 @@ define(
 
 
         var module = function(options){
-            console.log("PageView");
             this.options = options;
 
             $("body").bind(DomEvent.RESIZE,mryarbles.delegate(this.onResize,this));
@@ -19,12 +18,11 @@ define(
         };
 
         module.prototype.onResize = function(){
-            console.log("PageView.onResize");
 
         }
 
         module.prototype.openPage = function(){
-            console.log("PageView.openPage");
+
         }
 
         module.prototype.closePage = function(){

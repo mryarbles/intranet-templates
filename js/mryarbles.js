@@ -58,7 +58,6 @@
         $subclass.fn.proxy = $subclass.proxy;
     }
 
-
     mry.getQueryString = function(){
         var result = {}, queryString = location.search.substring(1),
             re = /([^&=]+)=([^&]*)/g, m;

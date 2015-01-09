@@ -1,0 +1,68 @@
+.toggle-grid-container {
+  width:60px;
+  height:40px;
+}
+
+.toggle-grid {
+
+
+  .icon {
+    display: block;
+    width:15px;
+    height:15px;
+    overflow: hidden;
+    background-image: url("../img/grid-toggle.png");
+    position: absolute;
+    top:50%;
+    margin-top:-7.5px;
+    left:50%;
+
+    &.icon-grid {
+      background-position: 0px 0px;
+      margin-left:-12.5px;
+    }
+
+    &.icon-list {
+      background-position: -15px 0px;
+      margin-left:-2.5px;
+    }
+  }
+
+
+
+  .toggle-slide {
+    border-radius: 9999px;
+    box-shadow: 0px 0px 0px 5px black;
+  }
+
+  .toggle-on, .toggle-off {
+    position: relative;
+    font-size: 11px;
+    font-weight: 500;
+  }
+
+  .toggle-on, .toggle-select .toggle-inner .active {
+    background: black;//rgb(69,163,31);
+    //box-shadow: inset 2px 2px 6px rgba(0,0,0,0.2);
+    //text-shadow: 1px 1px rgba(0,0,0,0.2);
+    //color: rgba(255,255,255, 0.8);
+  }
+
+  .toggle-off, .toggle-select .toggle-on {
+    //color: rgba(0,0,0,0.6);
+    //text-shadow: 0 1px rgba(255,255,255,0.2);
+    //background: linear-gradient(#cfcfcf ,#f5f5f5);
+    background:black;
+  }
+
+  .toggle-blob {
+    border-radius: 50px;
+    border:7px white solid;
+    background: radial-gradient(#f5f5f5, #cfcfcf);
+    //background: linear-gradient(#f5f5f5, #cfcfcf);
+    //box-shadow: 5px 5px 2px #888;
+    &:hover {
+      background: linear-gradient(#e4e4e4, #f9f9f9);
+    }
+  }
+}

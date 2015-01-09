@@ -13,7 +13,7 @@ define(
             this.bgSelecters = $backgroundsArr;
 
 
-            console.dir(this);
+            //console.dir(this);
 
             $("body").bind(BackgroundEvent.CHANGE, mryarbles.delegate(this.onBackgroundChange,this));
 
@@ -23,7 +23,7 @@ define(
         module.prototype.onBackgroundChange = function(e){
             var color = e.color;
 
-            console.log("Background.onBackgroundChange color:" + color);
+            //console.log("Background.onBackgroundChange color:" + color);
             // apply backgrounds
             for(var i= 0,l=this.bgSelecters.length;i<l;i++){
                 var el = $(this.bgSelecters[i]).get(0);

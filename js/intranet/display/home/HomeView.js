@@ -1,8 +1,8 @@
-
 "use strict";
 define(
     function (require)
     {
+
         var $ = require('jquery'),
             plugins = require('plugins'),
             mry = require('mryarbles'),
@@ -17,6 +17,11 @@ define(
 
         var module = function(options){
             console.log("HomeView");
+
+            if(options === undefined){
+                options = {};
+            }
+
             PageView.call(this,options);
             var slider = new Slider(".flexslider","header.main");
             var bg = new Background(["body","header.main"]);
@@ -37,7 +42,7 @@ define(
         }
 
         module.prototype.onResize = function(){
-            console.log("HomeView.onResize");
+            //console.log("HomeView.onResize");
             module.parent.onResize();
             var slider = $(".flexslider");
             var header = $("header.main");
@@ -56,10 +61,8 @@ define(
             console.log("HomeView.openPage");
             module.parent.openPage();
             //TweenLite.to($(this.options.container),2, {marginTop:0,opacity:1});
-            $(this.options.container).removeClass("closed");
+            $(this.options.container).find(".home-content").removeClass("closed");
         }
-
-
 
         return module;
     }

@@ -41,7 +41,7 @@ define(
             for(var i= 0,l=this.elements.length;i<l;i++){
                 var el = this.elements.eq(i);
                 var src = el.attr("data-src");
-                console.log(src);
+                //console.log(src);
                 var o = {
                     id: "asset" + i,
                     src:src

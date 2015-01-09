@@ -78,6 +78,13 @@ body.lightly {
       .icon-bar {
         background-color: black;
       }
+
+      &:hover {
+        transform: scale(1.2,1.2);
+        .icon-bar {
+          background-color: @link-color;
+        }
+      }
     }
 
   }
@@ -93,10 +100,17 @@ body.lightly {
   overflow: hidden;
   padding: 0px;
   margin: (@header-height-xs - 20px)/2 0px;
+  .anim();
+
+  &.mm-open {
+    transform: scale(0,0);
+  }
 
   @media(min-width: @screen-lg-min) {
     margin: (@header-height-lg - 20px)/2 0px;
   }
+
+
 
   .icon-bar {
     display: block;
@@ -105,6 +119,7 @@ body.lightly {
     height:3px;
     margin-bottom: 3px;
     .border-radius(0px);
+    .anim();
   }
 }
 
