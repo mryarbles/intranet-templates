@@ -1,0 +1,12 @@
+<div class="item slim alphabet-nav"  ng-hide="pages <= 1">
+    <div class="row">
+        <div class="col-xs-3 ">
+            <a ng-controller="NextPreviousController" rel="prev"  class="previous" ng-show="pages > 1 && page > 1" ng-hide="pages <= 1 || page == 1" href="#" ng-click="previousPage()"><span class="hidden-xs">« </span>Previous</a>
+        </div>
+            <div class="col-xs-6 pagination">Page {{ page }} of {{ pages }}</div>
+            <div class="col-xs-3">
+                <a ng-controller="NextPreviousController" rel="next" class="next pull-right" ng-show="pages > 1 && page < pages" ng-hide="pages <= 1 || page == pages" href="#" ng-click="nextPage()">Next<span class="hidden-xs"> »</span></a>
+            </div>
+     </div>
+</div>
+

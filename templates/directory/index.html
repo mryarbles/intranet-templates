@@ -1,40 +1,41 @@
-<div class="sub-nav">
+<div class="sub-nav" ng-controller="DirectorySearchController" data-api="test-data.json">
     <div class="row">
-        <div class="hidden-xs pull-left">
+        <div class="col-md-6 hidden-sm hidden-xs">
             <span class="txt-employees">435</span><span class="txt-employees-desc">Current Employees</span>
         </div>
-        <div class="col-sm-12 col-md-6 col-md-offset-6">
+        <div class="col-sm-12 col-md-6">
             <div class="row">
-                <div class="col-sm-4">
-                    <div class="pull-right dark-theme">
-                        <select class="form-control pull-right">
+                <div class="col-sm-5">
+                    <div class="dark-theme">
+                        <select class="form-control">
                             <option selected="selected" value="all">All Departments</option>
-                            <option ng-repeat="dept in departments" value="{{ dept.id }}">{{ dept.dept }}</option>
+                            <option ng-repeat="dept in departments" value="{!{ dept.id }!}">{!{ dept.dept }!}</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-sm-4">
-                    <div class="dark-theme pull-right">
+                    <div class="dark-theme">
                         <div class="input-group">
-                            <input class="form-control form-input-dark" type="text" name="searchStr" placeholder="Search..." />
+                            <input class="form-control form-input-dark" type="text" name="searchStr" id="directory-search-input" ng-model="searchStr" ng-trim="true" placeholder="Search..." />
                         <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">Go!</button>
+                            <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
                         </span>
                         </div><!-- /input-group -->
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-3 hidden-xs">
                     <div class="toggle-grid-container">
-                        <div ui-grid-toggle oggles class="toggle toggle-grid"></div>
+                        <div ui-grid-toggle toggles class="toggle toggle-grid"></div>
                     </div>
-                    <!--
-                    <select>
-                        <option value="grid"></option>
-                        <option value="list"></option>
-                    </select>
-                    -->
                 </div>
             </div>
         </div>
     </div>
+</div>
+<div class="results {!{ listType }!}" ng-controller="DirectorySearchResultsController">
+    <div class="results-list">
+        <!--<div class="item user" su="{{ superUser }}" directory-user="user" profile="{{ path('directory_user_view', {'guid':""}) }}/" ng-repeat="user in users"></div>-->
+        <directory-user  user="user" ng-repeat="user in users" ></directory-user>
+    </div>
+    <pagination></pagination>
 </div>

@@ -1,6 +1,7 @@
 .directory {
   .sub-nav {
     .standard-block(relative);
+    overflow: visible;
     background-color: #2f2f2f;
     padding:16px;
     color:white;
@@ -26,10 +27,6 @@
       text-transform: uppercase;
     }
 
-    .l-toggle {
-      //width:75px;
-      //height:40px;
-    }
 
 
   }
@@ -38,7 +35,27 @@
 // bootstrap theming
 .dark-theme {
   .form-control {
-    padding:5px;
+    color:white;
+    padding:10px;
+    height:auto;
+    background:black;
     border-radius: 50px;
+    border-color:black;
   }
+
+  .selecter {
+
+    &:focus {
+      outline: none;
+    }
+
+    width:100%;
+    max-width:100%;
+
+    &.selecter-selected {
+      background:black;
+      color:white;
+    }
+  }
+
 }

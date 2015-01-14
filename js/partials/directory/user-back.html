@@ -1,0 +1,29 @@
+<div class="user" data-guid="{!{ directoryUser.guid }!}">
+        <div class="flag flag-new" ><span>New</span></div>
+        <div class="cell cell-photo">
+            <div class="content content-photo"><img ng-src="{!{ directoryUser.imageSmall }!}" /></div>
+        </div>
+        <div class="cell cell-user-name">
+            <div class="content content-user-name">
+                <span class="name-first">{!{ directoryUser.nameFirst }!}</span><span class="name-last">{!{ directoryUser.nameLast}!}</span>
+            </div>
+        </div>
+        <div class="cell cell-job-title hidden-grid">
+            <div class="content content-job-title">{!{ directoryUser.divisionName }!} | {!{ directoryUser.jobTitle }!}</div>
+        </div>
+        <div class="cell cell-phone hidden-xs hidden-sm  hidden-md hidden-grid">
+            <div class="content content-phone phone-office">
+                <a href="tel:{!{ directoryUser.phoneOffice }!}"><span class="icon icon-phone"></span>{!{ directoryUser.phoneOffice }!}</a>
+            </div>
+        </div>
+        <div class="cell cell-phone hidden-xs hidden-sm hidden-md hidden-grid">
+            <div class="content content-phone phone-cell">
+                <a href="tel:{!{ directoryUser.phoneCell }!}"><span class="icon icon-cell"></span>{!{ directoryUser.phoneOffice }!}</a>
+            </div>
+        </div>
+        <div class="cell cell-email hidden-xs hidden-sm hidden-md hidden-grid">
+            <div class="content content-email">
+                <a href="mailto:{!{ directoryUser.email }!}"><span class="icon icon-email"></span>{!{ directoryUser.email }!}</a>
+            </div>
+        </div>
+</div> 

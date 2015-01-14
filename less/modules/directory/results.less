@@ -1,0 +1,175 @@
+.directory {
+
+  .user {
+    display: block;
+    position:relative;
+    overflow: hidden;
+    background:white;
+
+
+    .flag-new {
+      display: none;
+    }
+
+    &.featured {
+      .flag-new {
+        display: block;
+        position: absolute;
+        top:0px;
+        right:0px;
+        border-top:54px solid @link-color;
+        border-left:54px solid transparent;
+
+        span {
+          display: block;
+          position: absolute;
+          font-size: 11px;
+          font-weight: bold;
+          color: #ffffff;
+          text-transform: uppercase;
+          transform: rotate(45deg);
+          background: transparent;
+          top:-42px;
+          left:-30px
+        }
+
+      }
+    }
+
+    .icon {
+      display: inline-block;
+      position: relative;
+      width: 17px;
+      height: 17px;
+      overflow: hidden;
+      background: url("../img/icons-user.png");
+      margin-right: 6px;
+    }
+
+    .icon-phone {
+      top:2px;
+      background-position: 0px 0px;
+    }
+
+    .icon-cell {
+      top:2px;
+      background-position: -17px 0px;
+    }
+
+    .icon-email {
+      top:5px;
+      background-position: -34px 0px;
+    }
+
+  }
+
+  .results {
+    display: block;
+    position: relative;
+    background:#f6f7f8;
+    min-height: 500px;
+  }
+
+  .results-list {
+    display:block;
+    overflow: hidden;
+    width:100%;
+  }
+
+  .cell {
+    position:relative;
+    display:block;
+    height: 100%;
+    padding:0px;
+    margin:0px;
+    float:left;
+    overflow: hidden;
+    margin-right: 0px;
+    
+    .content {
+      display: block;
+      position: absolute;
+      top:50%;
+      left:0%;
+      transform: translate(0%,-50%);
+      width:100%;
+      line-height: 17px;
+    }
+    
+  }
+
+  .cell:last-child {
+    margin-right:0px;
+  }
+
+ .grid {
+   .hidden-grid {
+     display: none;
+   }
+ }
+
+  .list {
+    .user {
+      height:130px;
+      margin:10px 40px 0px 40px;
+
+      &:first-child {
+        margin:20px 40px 0px 40px;
+      }
+
+      .cell {
+        width:18%;
+      }
+
+      .cell-photo{
+        width:130px;
+
+        .content-photo {
+          width:100%;
+          height:auto;
+
+          img {
+            width:100%;
+            height:auto;
+          }
+        }
+
+      }
+      
+      .cell-photo {
+        margin-right: 29px;
+      }
+
+      .cell-user-name {
+        width:16%;
+      }
+
+      .cell-job-title {
+        width:26%;
+      }
+
+      .cell-phone {
+        width:10%;
+      }
+
+      .cell-email {
+        width:20%;
+      }
+
+      .content {
+        &.content-user-name {
+          font-size:112.5%;
+          font-weight: 500;
+          span:first-child {
+            &:after {
+              content: " ";
+            }
+          }
+        }
+      }
+
+    }
+
+  }
+
+}

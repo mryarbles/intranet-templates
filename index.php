@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>{{ title }}</title>
+        <title>{!{ title }!}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <base href="/">
@@ -15,11 +15,12 @@
 
         <link rel="stylesheet" href="bundles/jQuery.mmenu/src/css/jquery.mmenu.all.css">
         <link rel="stylesheet" href="js/vendor/flexslider/flexslider.css">
+        <link rel="stylesheet" href="bundles/Selecter/jquery.fs.selecter.min.css">
         <link rel="stylesheet" href="css/styles.css">
 
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
-    <body class="lightly {{ bodyClass }}" >
+    <body class="lightly {!{ bodyClass }!}">
         <!--[if lt IE 9]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->

@@ -10,18 +10,23 @@
                 var intranetModule = angular.module(config.appName, ['ngRoute', 'ngAnimate', GlobalModule.name, HomeModule.name, DirectoryModule.name, ServicesModule.name, DirectivesModule.name]);
 
                 intranetModule.config(
-                    function($routeProvider,$locationProvider){
+                    function($routeProvider,$locationProvider,$interpolateProvider){
                         console.log("Intranet config");
-                        console.dir($locationProvider);
+
+                        $interpolateProvider.startSymbol('{!{');
+                        $interpolateProvider.endSymbol('}!}');
+
                         $routeProvider.caseInsensitiveMatch = true;
                         $routeProvider
                             .when( "/",{
                                 templateUrl:'templates/home/index.html',
-                                controller:'HomeController'
+                                controller:'HomeController',
+                                controllerAs:'home'
                             })
                             .when( "/directory",{
                                 templateUrl:'templates/directory/index.html',
-                                controller:'DirectoryController'
+                                controller:'DirectoryController',
+                                controllerAs:'directory'
                             })
                             .otherwise(
                                 {

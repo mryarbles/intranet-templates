@@ -1,0 +1,17 @@
+<div class="item slim alphabet-nav">
+    <div class="row-fluid">
+        <div class="span2">
+            <a ng-controller="NextPreviousController" rel="prev"  class="previous" ng-show="pages > 1 && page > 1" ng-hide="pages <= 1 || page == 1" href="#" ng-click="previousPage()">« Previous</a>
+        </div>
+            <div class="span8">
+              <div class="pagination">
+                <ul>
+                  
+                </ul>
+              </div> 
+            </div>
+            <div class="span2">
+                <a ng-controller="NextPreviousController" rel="next" class="next" ng-show="pages > 1 && page < pages" ng-hide="pages <= 1 || page == pages" href="#" ng-click="nextPage()">Next »</a>
+            </div>
+     </div>
+</div>

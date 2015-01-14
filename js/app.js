@@ -14,6 +14,7 @@ requirejs.config( {
         "ngRoute":"../../bundles/angular-route/angular-route",
         "ngAnimate":"../../bundles/angular-animate/angular-animate.min",
         "bootstrap":"../../bundles/bootstrap/dist/js/bootstrap.min",
+        "selecter":"../../bundles/Selecter/jquery.fs.selecter.min",
         "flexslider":"../../bundles/flexslider/jquery.flexslider",
         "toggles":"../../bundles/jquery-toggles/toggles",
         "mmenu":"../../bundles/jQuery.mmenu/src/js/jquery.mmenu.min.all",
@@ -35,6 +36,9 @@ requirejs.config( {
             deps: ['jquery']
         },
         "bootstrap": {
+            deps:['jquery']
+        },
+        "selecter": {
             deps:['jquery']
         },
         "flexslider": {
